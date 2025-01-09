@@ -1,0 +1,72 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+@layer base {
+  :root {
+    --background: #ffffff;
+    --foreground: #000000;
+    --card: #ffffff;
+    --card-foreground: #000000;
+    --popover: #ffffff;
+    --popover-foreground: #000000;
+    --primary: #ffffff;
+    --primary-foreground: #e195ab;
+    --secondary: #000000;
+    --secondary-foreground: #ffc9d8;
+    --muted: #000000; /* 낮은 우선순위의 색상 (비활성화 상태 등) */
+    --muted-foreground: #aaaaaa; /* 배경 위 글자 또는 아이콘 색 */
+    --accent: #ffffff; /* 강조 색상 (눈에 띄는 배경이나 요소 강조) */
+    --accent-foreground: #000000;
+    --destructive: #cccccc; /* 경고 또는 파괴적 행동 (삭제 버튼 등) */
+    --destructive-foreground: #000000;
+    --border: #cccccc;
+    --input: #cccccc;
+    --ring: #cccccc;
+    --chart-1: #cccccc;
+    --chart-2: #cccccc;
+    --chart-3: #cccccc;
+    --chart-4: #cccccc;
+    --chart-5: #cccccc;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
