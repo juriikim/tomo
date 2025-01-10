@@ -23,11 +23,11 @@ body {
     --popover: #ffffff;
     --popover-foreground: #000000;
     --primary: #ffffff;
-    --primary-foreground: #e195ab;
+    --primary-foreground: #ff8686;
     --secondary: #000000;
     --secondary-foreground: #ffc9d8;
-    --muted: #000000; /* 낮은 우선순위의 색상 (비활성화 상태 등) */
-    --muted-foreground: #aaaaaa; /* 배경 위 글자 또는 아이콘 색 */
+    --muted: #ffffff; /* 낮은 우선순위의 색상 (비활성화 상태 등) */
+    --muted-foreground: #994444; /* 배경 위 글자 또는 아이콘 색 */
     --accent: #ffffff; /* 강조 색상 (눈에 띄는 배경이나 요소 강조) */
     --accent-foreground: #000000;
     --destructive: #cccccc; /* 경고 또는 파괴적 행동 (삭제 버튼 등) */

@@ -1,5 +1,12 @@
 import PageLayout from '@/components/layout/pageLayout'
+import PointerCircle from '@/components/layout/pointerCircle'
 
-export default async function Home() {
-  return <PageLayout>하이</PageLayout>
+export default function Home() {
+  return (
+    <PageLayout className="text-2xl">
+      <p>일본어 공부를 재밌게!</p>
+      <p>tomo와 함께 일본어 단어를 쉽게 배워요.</p>
+      <PointerCircle />
+    </PageLayout>
+  )
 }
