@@ -1,5 +1,3 @@
-import MainScroll from '@/app/mainScroll'
-
 export default async function Home() {
-  return <MainScroll />
+  return <div>메인 페이지</div>
 }
