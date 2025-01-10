@@ -1,9 +1,9 @@
-import { ReactNode } from "react";
+import { ReactNode } from 'react'
 
 type PageLayoutProps = {
-  children: ReactNode;
-};
+  children: ReactNode
+}
 
 export default function PageLayout({ children }: PageLayoutProps) {
-  return <div className="my-32 px-4">{children}</div>;
+  return <div className="m-auto px-4 py-10">{children}</div>
 }

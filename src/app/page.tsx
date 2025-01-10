@@ -1,3 +1,5 @@
+import PageLayout from '@/components/layout/pageLayout'
+
 export default async function Home() {
-  return <div>메인 페이지</div>
+  return <PageLayout>하이</PageLayout>
 }
