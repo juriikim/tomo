@@ -22,8 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`flex min-h-screen min-w-[350px] flex-col antialiased`}>
-        <Header />
-        <main className="m-auto w-screen max-w-screen-xl grow">{children}</main>
+        <Header /> {/** 헤더 높이 : 56px(3.5rem)  */}
+        <main className="m-auto h-[calc(100vh-56px)] w-full max-w-screen-2xl grow">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
