@@ -24,7 +24,7 @@ export default function PointerCircle({
   }, [])
   return (
     <div
-      className={`absolute h-${height} w-${width} pointer-events-none rounded-full bg-primary-foreground`}
+      className={`absolute -z-10 h-${height} w-${width} pointer-events-none rounded-full bg-primary-foreground`}
       style={{
         left: `${mousePosition.x - 15}px`,
         top: `${mousePosition.y - 15}px`,
