@@ -23,7 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`flex min-h-screen min-w-[350px] flex-col antialiased`}>
         <Header /> {/** 헤더 높이 : 56px(3.5rem)  */}
-        <main className="m-auto h-[calc(100vh-56px)] w-full max-w-screen-2xl grow">
+        <main className="m-auto min-h-[calc(100vh-56px)] w-full max-w-screen-2xl grow">
           {children}
         </main>
         <Footer />

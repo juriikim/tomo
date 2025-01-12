@@ -1,6 +1,7 @@
 import Particle from '@/components/common/particle'
 import PageLayout from '@/components/layout/pageLayout'
 import PointerCircle from '@/components/layout/pointerCircle'
+import ScrollCard from '@/components/common/scollCard'
 
 export default function Home() {
   return (
@@ -11,6 +12,7 @@ export default function Home() {
       </p>
       <PointerCircle />
       <Particle />
+      <ScrollCard />
     </PageLayout>
   )
 }
