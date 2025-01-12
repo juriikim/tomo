@@ -1,7 +1,7 @@
 import Particle from '@/components/common/particle'
 import PageLayout from '@/components/layout/pageLayout'
 // import PointerCircle from '@/components/layout/pointerCircle'
-import ScrollCard from '@/components/common/scrollCard'
+import ScrollCard from '@/components/common/card'
 
 export default function Home() {
   return (

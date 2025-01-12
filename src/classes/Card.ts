@@ -1,4 +1,4 @@
-export class ScrollCard {
+export class Card {
   x: number
   y: number
   rotation: number
