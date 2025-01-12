@@ -1,7 +1,7 @@
 import Particle from '@/components/common/particle'
 import PageLayout from '@/components/layout/pageLayout'
-import PointerCircle from '@/components/layout/pointerCircle'
-import ScrollCard from '@/components/common/scollCard'
+// import PointerCircle from '@/components/layout/pointerCircle'
+import ScrollCard from '@/components/common/scrollCard'
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <p className="shadow-black drop-shadow-md">
         tomo와 함께 일본어 단어를 쉽게 배워요.
       </p>
-      <PointerCircle />
+      {/* <PointerCircle /> */}
       <Particle />
       <ScrollCard />
     </PageLayout>

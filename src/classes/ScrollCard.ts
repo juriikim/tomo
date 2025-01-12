@@ -8,6 +8,4 @@ export class ScrollCard {
     this.y = Math.random() * h
     this.rotation = Math.random() * 360
   }
-
-  draw() {}
 }

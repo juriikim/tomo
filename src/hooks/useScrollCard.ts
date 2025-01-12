@@ -5,41 +5,63 @@ export type ScrollCardType = {
   x: number
   y: number
   rotation: number
-
-  draw: () => void
 }
 
 export const useScrollCard = () => {
   const containerRef = useRef<HTMLDivElement | null>(null)
-  const [cardArray, setCardArray] = useState<ScrollCardType[]>()
-  const [scrollProgress, setScrollProgress] = useState(0)
+  const [cardArray, setCardArray] = useState<ScrollCardType[]>([])
 
+  const assembleCard = () => {
+    const copy: ScrollCardType[] = cardArray.map((card) => {
+      card.x = (containerRef.current?.clientWidth || 1) / 2
+      card.y = containerRef.current?.clientHeight || 1
+      return card
+    })
+    setCardArray(copy)
+    setTimeout(() => rotateCard(), 500)
+  }
+
+  const rotateCard = () => {
+    let rotate = -30
+
+    const copy: ScrollCardType[] = cardArray.map((card) => {
+      rotate += 2
+      card.x = (containerRef.current?.clientWidth || 1) / 2
+      card.y = containerRef.current?.clientHeight || 1
+      card.rotation = rotate
+      return card
+    })
+    setCardArray(copy)
+  }
   useEffect(() => {
     if (!containerRef.current) return
+
     const cardArr = Array.from(
-      { length: 10 },
+      { length: 20 },
       () =>
-        new ScrollCard(window.innerWidth, window.innerHeight) as ScrollCardType
+        new ScrollCard(
+          containerRef.current?.clientWidth || 100,
+          containerRef.current?.clientHeight || 100
+        ) as ScrollCardType
     )
     setCardArray(cardArr)
 
-    const handleScroll = () => {
-      if (!containerRef.current) return
-      const rect = containerRef.current.getBoundingClientRect()
-      const scrollProgress = Math.max(
-        0,
-        Math.min(1, 1 - rect.top / (window.innerHeight / 2))
+    const handleReset = () => {
+      const cardArr = Array.from(
+        { length: 20 },
+        () =>
+          new ScrollCard(
+            containerRef.current?.clientWidth || 100,
+            containerRef.current?.clientHeight || 100
+          ) as ScrollCardType
       )
-      setScrollProgress(scrollProgress)
-      console.log('h ', window.innerHeight)
-      console.log('t ', rect.top)
-      console.log('progress ', scrollProgress)
+      setCardArray(cardArr)
     }
-
-    window.addEventListener('scroll', handleScroll)
-    // window.addEventListener('re', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
+    window.addEventListener('resize', handleReset)
+    return () => {
+      window.addEventListener('resize', handleReset)
+    }
   }, [])
 
-  return { containerRef, cardArray, scrollProgress }
+  return { containerRef, cardArray, assembleCard }
 }
