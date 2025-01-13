@@ -10,7 +10,6 @@ export default function Home() {
       <p className="shadow-black drop-shadow-md">
         tomo와 함께 일본어 단어를 쉽게 배워요.
       </p>
-      {/* <PointerCircle /> */}
       <Particle />
       <ScrollCard />
     </PageLayout>

@@ -14,7 +14,7 @@ export default function Card() {
       {cardArray?.map((card, index) => (
         <div
           key={index}
-          className="absolute h-[200px] w-[150px] bg-white py-10 text-secondary opacity-95 shadow-md transition-all duration-700"
+          className="absolute h-[200px] w-[150px] border-2 bg-white py-10 text-secondary opacity-95 shadow-md transition-all duration-700"
           style={{
             transform: `translate(calc(${card.x}px - 50%), calc(${card.y}px - 200px)) rotate(${card.rotation}deg)`,
           }}
@@ -29,7 +29,7 @@ export default function Card() {
           await assembleCard()
           router.push('/words')
         }}
-        className="relative top-52 z-40 m-auto w-fit cursor-pointer border-2 border-muted-foreground bg-primary-foreground px-10 py-4 shadow-drop shadow-muted-foreground brightness-105 transition-all before:absolute before:right-2 before:top-2 before:h-3 before:w-3 before:bg-white after:absolute after:right-3 after:top-3 after:h-3 after:w-3 after:bg-primary-foreground hover:translate-y-2 hover:shadow-none"
+        className="relative top-52 z-40 m-auto w-fit cursor-pointer border-2 border-muted-foreground bg-primary-foreground px-10 py-4 shadow-drop shadow-muted-foreground transition-all before:absolute before:right-2 before:top-2 before:h-3 before:w-3 before:bg-white after:absolute after:right-3 after:top-3 after:h-3 after:w-3 after:bg-primary-foreground hover:translate-y-2 hover:shadow-none"
       >
         단어장
         <br /> 보러가기
