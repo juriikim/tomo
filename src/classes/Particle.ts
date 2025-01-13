@@ -20,9 +20,14 @@ export class Particle {
   }
 
   draw(ctx: CanvasRenderingContext2D, src: CanvasImageSource) {
-    if (this.y > window.innerHeight || this.x > window.innerWidth) {
+    if (
+      this.y > document.documentElement.scrollHeight ||
+      this.x > window.innerWidth
+    ) {
       this.x = -10
-      this.y = Math.random() * window.innerHeight * 2 - window.innerHeight
+      this.y =
+        Math.random() * document.documentElement.scrollHeight * 2 -
+        document.documentElement.scrollHeight
       this.xSpeed = 0.8 + Math.random()
       this.ySpeed = 0.5 + Math.random()
     }

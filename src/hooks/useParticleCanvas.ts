@@ -23,7 +23,7 @@ export const useParticleCanvas = ({
   useEffect(() => {
     if (!canvasRef.current) return
     canvasRef.current.width = window.innerWidth
-    canvasRef.current.height = window.innerHeight
+    canvasRef.current.height = document.documentElement.scrollHeight
     const ctx = canvasRef.current.getContext('2d')
     if (!ctx) return
 
@@ -32,11 +32,20 @@ export const useParticleCanvas = ({
     particleImage.onload = () => render()
     const particleArray = Array.from(
       { length: count },
-      () => new Particle(window.innerWidth, window.innerHeight) as ParticleType
+      () =>
+        new Particle(
+          window.innerWidth,
+          document.documentElement.scrollHeight
+        ) as ParticleType
     )
 
     const render = () => {
-      ctx.clearRect(0, 0, window.innerWidth, window.innerHeight)
+      ctx.clearRect(
+        0,
+        0,
+        window.innerWidth,
+        document.documentElement.scrollHeight
+      )
 
       particleArray.forEach((particle) => particle.animate(ctx, particleImage))
       requestAnimationFrame(render)
@@ -45,7 +54,7 @@ export const useParticleCanvas = ({
     const handleResize = () => {
       if (canvasRef.current) {
         canvasRef.current.width = window.innerWidth
-        canvasRef.current.height = window.innerHeight
+        canvasRef.current.height = document.documentElement.scrollHeight
       }
     }
 
