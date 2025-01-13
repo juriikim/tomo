@@ -13,11 +13,14 @@ export default function WordsPage() {
       <p className="text-center">
         단어 카드를 넘기며 재밌게 단어를 외워보세요!
       </p>
-      <ul className="my-10 grid grid-rows-3 sm:grid-cols-2">
+      <ul className="m-auto my-10 grid max-w-5xl grid-cols-1 sm:grid-cols-2">
         {levels.map((level, index) => (
-          <li key={index}>
+          <li
+            key={index}
+            className={`${index === levels.length - 1 ? 'sm:col-span-2' : ''}`}
+          >
             <Link
-              className={`relative m-2 block cursor-pointer rounded border-2 border-muted-foreground bg-primary-foreground p-4 text-lg text-primary shadow-drop shadow-muted-foreground transition-all before:absolute before:right-2 before:top-2 before:h-3 before:w-3 before:bg-white after:absolute after:right-3 after:top-3 after:h-3 after:w-3 after:bg-primary-foreground hover:translate-y-2 hover:shadow-none sm:p-5 ${index === 4 && 'sm:col-start-1 sm:col-end-3'}`}
+              className="relative m-2 block cursor-pointer rounded border-2 border-muted-foreground bg-primary-foreground p-4 text-lg text-primary shadow-drop shadow-muted-foreground transition-all before:absolute before:right-2 before:top-2 before:h-3 before:w-3 before:bg-white after:absolute after:right-3 after:top-3 after:h-3 after:w-3 after:bg-primary-foreground hover:translate-y-2 hover:shadow-none sm:p-5"
               href={`/words/${level}`}
             >
               {level}

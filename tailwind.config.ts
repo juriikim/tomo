@@ -82,7 +82,7 @@ export default {
         '600': '600ms',
       },
       boxShadow: {
-        drop: '0px 5px 0px 0px black',
+        drop: '0px 5px 0px 0px var(--muted-foreground)',
         right: '5px 3px 0px 0px black',
       },
     },
