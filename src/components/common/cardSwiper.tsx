@@ -1,20 +1,9 @@
 'use client'
-import Image from 'next/image'
-import hosina1 from '@/asset/hosina1.jpg'
-import hosina2 from '@/asset/hosina2.jpg'
-import hosina3 from '@/asset/hosina3.jpg'
-import hosina4 from '@/asset/hosina4.jpg'
-import hosina5 from '@/asset/hosina5.jpg'
+import { words_N1_nature } from '@/constants/words'
 import { useRef, useState } from 'react'
 
 export default function CardSwiper() {
-  const [cardList, setCardList] = useState([
-    hosina1,
-    hosina2,
-    hosina3,
-    hosina4,
-    hosina5,
-  ])
+  const [cardList, setCardList] = useState(words_N1_nature)
   const [position, setPosition] = useState({
     x: 0,
     y: 0,
@@ -24,7 +13,6 @@ export default function CardSwiper() {
   const startPosition = useRef({ x: 0, y: 0 })
   const isDragging = useRef(false)
 
-  console.log(!isDragging.current)
   const handlePointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
     isDragging.current = true
     startPosition.current.x = e.clientX
@@ -74,7 +62,7 @@ export default function CardSwiper() {
         {cardList.map((card, index) => (
           <div
             key={index}
-            className={`absolute h-[300px] w-[180px] overflow-hidden rounded-lg`}
+            className={`absolute h-[300px] w-[180px] overflow-hidden rounded-lg bg-primary-foreground`}
             style={
               index === cardList.length - 1
                 ? {
@@ -87,7 +75,11 @@ export default function CardSwiper() {
             }
             onPointerDown={(e) => handlePointerDown(e)}
           >
-            <Image alt="" src={card} fill draggable={false} />
+            <div className="flex h-full w-full select-none flex-col items-center justify-center">
+              <strong className="mb-4 text-2xl">{card.word}</strong>
+              <p className="mb-3 text-sm">[ {card.reading} ]</p>
+              <p>{card.meaning}</p>
+            </div>
           </div>
         ))}
       </div>
